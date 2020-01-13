@@ -1,0 +1,25 @@
+name:                bfdemo
+version:             1.0
+description:         Parser and interpreter written from scratch in Haskell for the esoteric language "brainfuck"
+license:             BSD3
+author:              Mikaël Francoeur
+maintainer:          mikael@mikaelfrancoeur.com
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable bfdemo
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       Parser, BFInterpreter
+  build-depends:       base >=4.8 && <4.9, containers, transformers, ghc, lens
+  default-language:    Haskell2010
+
+test-suite spec
+  type:                exitcode-stdio-1.0
+  main-is:             Spec.hs
+  hs-source-dirs:      test, src
+  ghc-options:         -Wall
+  build-depends:       base ==4.*, hspec ==2.*, ghc, containers, transformers
+  other-modules:       ParserSpec, Parser
+  default-language:    Haskell2010
+  build-tool-depends:  hspec-discover:hspec-discover == 2.*
