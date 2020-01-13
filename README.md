@@ -9,6 +9,6 @@ Build system is Stack.
 Unit tests use Hspec.
 
 
-##Example:
+## Example:
 
 ![](images/demo.png)
